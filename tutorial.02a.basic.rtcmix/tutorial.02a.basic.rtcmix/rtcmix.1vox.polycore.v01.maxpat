@@ -45,6 +45,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 175.0, 506.0, 35.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out 2"
 				}
 
@@ -56,6 +60,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 118.0, 506.0, 35.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out 1"
 				}
 
@@ -127,9 +135,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "int", "bang", "bang" ],
-					"patching_rect" : [ 34.0, 301.0, 481.0, 22.0 ],
-					"text" : "t i b b"
+					"outlettype" : [ "", "bang", "bang" ],
+					"patching_rect" : [ 34.0, 301.0, 40.0, 22.0 ],
+					"text" : "t l b b"
 				}
 
 			}
@@ -140,6 +148,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 34.0, 506.0, 42.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out~ 1"
 				}
 
@@ -352,6 +364,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 34.0, 24.0, 28.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -551,34 +567,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "bach.mc2f.maxpat",
-				"bootpath" : "C74:/packages/bach/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bach.playkeys.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "bach.expr.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "bach.portal.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "bach.args.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "rtcmix~.mxe64",
-				"type" : "mx64"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "ksliderWhite",
 				"default" : 				{
