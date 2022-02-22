@@ -1,0 +1,9 @@
+actualwave = maketable("wave", 1000, "saw")
+ampenv = maketable("line", 1000, 0,1, 10,0)
+
+pitch = $1
+amp = $2
+onset = $3
+dur = $4
+
+WAVETABLE(0, dur, amp * ampenv, pitch, 0.5, actualwave)

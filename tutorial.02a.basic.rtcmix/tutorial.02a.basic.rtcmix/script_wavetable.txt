@@ -1,0 +1,16 @@
+// STRUM2 Instrument Syntax:
+// WAVETABLE(outsk, dur, AMP, PITCH[, PAN, WAVETABLE])
+// source: http://rtcmix.org/reference/instruments/WAVETABLE.php
+
+starttime = 0 // used in place of the outsk pfield below
+
+for (i = 0; i < 10; i = i + 1) {
+	jorge = irand(200,800) // random number within range of 300-700 hz
+	jesus = random() * 5 + 0.25
+	STRUM2(starttime, jesus, 20000, jorge, 2, jesus, random())
+	starttime = starttime + 0.5 // <= try alternating the constant to give it a new rate
+}
+
+// Notice we're also choosing random pan positions
+
+MAXBANG(starttime)

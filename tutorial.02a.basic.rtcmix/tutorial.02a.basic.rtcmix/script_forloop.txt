@@ -1,0 +1,14 @@
+// STRUM2 Instrument Syntax:
+// STRUM2(outsk, dur, AMP, PITCH, squish, decay_time[, PAN])
+// source: http://rtcmix.org/reference/instruments/STRUM2.php
+
+starttime = 0 // used in place of the outsk pfield below
+
+for (i = 0; i < 10; i = i + 1) {
+	STRUM2(starttime, 3.5, 20000, 443.9, 2, 3.5)
+	starttime = starttime + 0.5 // <= try alternating the constant to give it a new rate
+}
+
+
+
+
