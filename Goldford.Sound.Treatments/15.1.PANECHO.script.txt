@@ -1,0 +1,21 @@
+rtinput("AUDIO")
+
+start = 0
+instart = 0
+duration = 60
+amplitude = 1.0
+envelope = maketable("window", 1000, "hanning")
+channel0delay = 0.25
+	// in seconds
+channel1delay = 0.50
+delay_feedback = 0.8
+	// ALWAYS less than 1.0 or a crazy feedback loop ensues!
+ringdowndur = 1.0
+
+// Syntax for PANECHO Instrument:
+// source: http://rtcmix.org/reference/instruments/PANECHO.php
+
+PANECHO(start, instart, duration, amplitude*envelope, channel0delay, channel1delay, delay_feedback, ringdowndur)
+
+// source: 'Computer Music Composition with RTcmix' by Jerod Sommerfeldt, p. 86.
+// http://sites.music.columbia.edu/cmc/courses/g6611/spring2017/week2/2015-0626_RTcmixbookrough1.pdf

@@ -1,0 +1,32 @@
+// We can alternatively process live a input audio stream coming directly from max.
+// Instead of a path to an audio file, we can specify:
+
+rtinput("AUDIO")
+
+// We use bus_config() like a mixing board; to connect the soundfile -> MOOGVCF -> REVERBIT -> outlets in Max patch.
+
+bus_config("AM", "in 0-1", "aux 0-1 out")
+	// "0-1" input from sound file (rtinput)
+	// "aux 0-1 out" auxiliary "audio busses" allowing us to connect RTcmix instruments
+bus_config("REVERBIT", "aux 0-1 in", "out 0-1")
+	// "aux 0-1 in" received input from MOOGVCF
+	// "out 0-1" output to the Max object's outlets (in out outside patch)
+
+freq = maketable("line", "nonorm", 1000, 0,2000, 25,200, 50,500, 100,1100)
+
+// Syntax for the AM Instrument:
+// AM(outsk, insk, dur, AMP, MODFREQ[, inputchan, PAN, MODWAVETABLE])
+// ring modulate the enture soundfile with a 378 Hz modulator
+
+modulator = makeconnection("inlet", 1, 378.0)
+	// Here we declare a variable controlled by live data input from within the max patch...
+
+AM(0.0, 0.0, dur=9999, 1.0, modulator)
+	// Now, our live input will control the modulator frequency. Try different frequencies in the patch...
+
+// ...increased dur to 9999 here as well; to allow for indefinite real-time processing
+
+// Synatax for the REVERBIT Instrument:
+// REVERBIT(outsk, insk, dur, AMP, RVBTIME, RVBAMT, chan0delay, FILTFREQ[, dcblock, ringdowndur])
+
+REVERBIT(outskip=0.0, inskip=0.0, dur=9999, amp=1.0, revtime=2.6, revpct=0.4, rtchandel=0.02, cutoff=5000.0)
